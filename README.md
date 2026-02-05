@@ -37,7 +37,6 @@ The main goal of this project is to demonstrate **QA Senior / SDET skills**, inc
 Endpoint:
 POST /auth/login
 
-
 Covered scenarios:
 - Successful login with valid credentials
 - Invalid password
@@ -55,13 +54,11 @@ Key focus:
 ## 👤 Users API Coverage
 
 Endpoints:
-
 GET /users
 GET /users/{id}
 POST /users
 PUT /users/{id}
 DELETE /users/{id}
-
 
 Covered scenarios:
 - Retrieve all users
@@ -81,7 +78,6 @@ Key focus:
 ## 🛍️ Products API Coverage
 
 Endpoints:
-
 GET /products
 GET /products/{id}
 POST /products
@@ -102,13 +98,11 @@ Covered scenarios:
 ## 🛒 Carts API Coverage
 
 Endpoints:
-
 GET /carts
 GET /carts/{id}
 POST /carts
 PUT /carts/{id}
 DELETE /carts/{id}
-
 
 Covered scenarios:
 - Full CRUD for carts
@@ -124,7 +118,23 @@ Covered scenarios:
 - Tests are designed to be **resilient**, avoiding false negatives.
 - Schema validation reflects the **actual API behavior**, not only the documentation examples.
 
+### Execution Analysis and Findings
+
+- **POST and PUT**
+  - The API accepts invalid JSON payloads during resource creation.
+  - Update operations (PUT) do not enforce payload validation.
+  - The same behavior was observed for the Users endpoint.
+
+- **DELETE**
+  - No validation rules are applied when deleting resources with invalid or non-existing IDs.
+  - The API may return successful responses even when the resource does not exist.
+
+- **GET**
+  - The API does not validate invalid or non-existing identifiers (e.g. string values such as `x`).
+  - Requests with invalid IDs may still return successful responses instead of appropriate error codes (e.g. 404).
+
 ---
+
 
 ## ▶️ Running the Tests
 
@@ -136,7 +146,13 @@ npm install
 npx cypress run
 ```
 
-🎯 Purpose
+## CI - API Tests
+
+API tests are executed automatically via [GitHub Actions](https://github.com/mandalp/fakestore-api-tests/actions/runs/21724438005/job/62662627347) on every push and pull request to the `main` branch.
+The pipeline runs Cypress API tests against the public FakeStore API.
+
+
+## 🎯 Purpose
 
 This project was created to:
 
