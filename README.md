@@ -23,6 +23,17 @@ The main goal of this project is to demonstrate **QA Senior / SDET skills**, inc
 
 ---
 
+## ▶️ Running the Tests
+
+Install dependencies:
+```bash
+npm install
+```
+```bash
+npx cypress run
+```
+
+---
 
 ### Structure Overview
 - **e2e/**: Test suites organized by API domain
@@ -135,31 +146,46 @@ Covered scenarios:
 
 ---
 
+## 🧪 Test Execution Results
 
-## ▶️ Running the Tests
+All API tests were executed successfully using Cypress against the public FakeStore API through a GitHub Actions CI pipeline.
 
-Install dependencies:
-```bash
-npm install
-```
-```bash
-npx cypress run
-```
+### Execution Environment
+- Test Framework: Cypress (API testing)
+- Execution: GitHub Actions
+- Target API: https://fakestoreapi.com
+- Node.js version: 18.18.x
+
+### Results Summary
+- API endpoints were successfully exercised across multiple HTTP methods (GET, POST, PUT, DELETE).
+- Both positive and negative scenarios were executed.
+- Schema validations were applied according to the actual API responses.
+- No execution failures related to test infrastructure were observed.
+
+### Observations
+- Some tests intentionally validate unexpected but accepted API behaviors (e.g. missing validation rules).
+- These behaviors are documented in the **Execution Analysis and Findings** section and are treated as known limitations of the public API rather than test failures.
+
+---
 
 ## CI - API Tests
 
-API tests are executed automatically via [GitHub Actions](https://github.com/mandalp/fakestore-api-tests/actions/runs/21724438005/job/62662627347) on every push and pull request to the `main` branch.
+API tests are executed automatically via GitHub Actions on every push and pull request to the `main` branch.
 The pipeline runs Cypress API tests against the public FakeStore API.
 
+[![Cypress API Tests - FakeStore](https://github.com/mandalp/fakestore-api-tests/actions/workflows/cypress-api.yml/badge.svg)](https://github.com/mandalp/fakestore-api-tests/actions/workflows/cypress-api.yml)
+
+---
 
 ## 🎯 Purpose
 
 This project was created to:
 
-- Practice and demonstrate API test automation
+- Demonstrate real-world API test automation skills
 - Apply QA Senior / SDET best practices
-- Showcase contract testing with JSON Schema
-- Build a professional automation portfolio
+- Validate API contracts using JSON Schema
+- Perform critical analysis of API behavior and quality risks
+- Build a professional, production-like automation portfolio
 
 ## 👩‍💻 About the Author
 
