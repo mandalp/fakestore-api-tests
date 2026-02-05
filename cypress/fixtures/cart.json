@@ -1,0 +1,27 @@
+{
+  "validCart": {
+    "userId": 1,
+    "date": "2024-01-01",
+    "products": [
+      { "productId": 1, "quantity": 2 }
+    ]
+  },
+  "emptyProducts": {
+    "userId": 1,
+    "date": "2024-01-01",
+    "products": []
+  },
+  "missingUserId": {
+    "date": "2024-01-01",
+    "products": [
+      { "productId": 1, "quantity": 1 }
+    ]
+  }, 
+  "updateCart": {
+    "userId": 1,
+    "date": "2024-02-01",
+    "products": [
+      { "productId": 2, "quantity": 3 }
+    ]
+  }
+}

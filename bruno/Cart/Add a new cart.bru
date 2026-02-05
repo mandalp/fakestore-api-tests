@@ -1,0 +1,33 @@
+meta {
+  name: Add a new cart
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://fakestoreapi.com/carts
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "id": 0,
+    "userId": 0,
+    "products": [
+      {
+        "id": 0,
+        "title": "Teste",
+        "price": 0.1,
+        "description": "Mais um teste",
+        "category": "string",
+        "image": "http://example.com"
+      }
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

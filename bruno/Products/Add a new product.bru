@@ -1,0 +1,47 @@
+meta {
+  name: Add a new product
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://fakestoreapi.com/products
+  body: json
+  auth: inherit
+}
+
+params:query {
+  : 
+}
+
+body:json {
+  {
+    "title": "Ursinho",
+    "price": 0.1,
+    "description": "Ursinho de pelucia LS",
+    "category": "Brinquendos",
+    "image": "http://example.com"
+  }
+}
+
+tests {
+  test("should return success", function () {
+    expect(res.getStatus()).to.equal(201);
+  });
+   
+  test("should not return server error", function () {
+    expect(res.getStatus()).to.not.equal(500);
+  });
+  
+  test("should have correct content type", function () {
+    expect(res.getHeader("content-type")).to.contain("application/json");
+  });
+  test("should have body", function () {
+    expect(response.body).to.not.be.empty
+  });
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

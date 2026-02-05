@@ -1,0 +1,23 @@
+meta {
+  name: Delete product
+  type: http
+  seq: 7
+}
+
+delete {
+  url: https://fakestoreapi.com/products/x
+  body: json
+  auth: inherit
+}
+
+tests {
+  test("should return success", function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

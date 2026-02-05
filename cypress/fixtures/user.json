@@ -1,0 +1,34 @@
+{
+  "newUser": {
+    "email": "test.user@email.com",
+    "username": "testuser",
+    "password": "password123",
+    "name": {
+      "firstname": "Test",
+      "lastname": "User"
+    },
+    "address": {
+      "city": "New York",
+      "street": "Main Street",
+      "number": 123,
+      "zipcode": "10001"
+    },
+    "phone": "11999999999"
+  },
+  "updatedUser": {
+    "email": "updated.user@email.com",
+    "username": "updateduser",
+    "password": "password456",
+    "name": {
+      "firstname": "Updated",
+      "lastname": "User"
+    },
+    "address": {
+      "city": "Los Angeles",
+      "street": "Second Street",
+      "number": 456,
+      "zipcode": "90001"
+    },
+    "phone": "11888888888"
+  }
+}

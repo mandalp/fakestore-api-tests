@@ -1,0 +1,33 @@
+meta {
+  name: Update a product
+  type: http
+  seq: 6
+}
+
+put {
+  url: https://fakestoreapi.com/products/xxx
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "title": "Ursinho",
+    "price": 0.1,
+    "description": "Ursinho de pelucia LS",
+    "category": "Brinquendos",
+    "image": "http://example.com"
+  }
+}
+
+tests {
+  test("should return success", function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

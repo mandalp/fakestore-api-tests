@@ -1,0 +1,15 @@
+# Dependences
+node_modules/
+
+# Cypress
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+cypress/fixtures/examples/
+
+# Enviroment
+.env
+
+# System
+.DS_Store
+*.log

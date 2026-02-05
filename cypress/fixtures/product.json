@@ -1,0 +1,16 @@
+{
+  "newProduct": {
+    "title": "Test Product",
+    "price": 99.9,
+    "description": "Product created for test automation",
+    "image": "https://i.pravatar.cc",
+    "category": "electronics"
+  },
+  "updatedProduct": {
+    "title": "Updated Product",
+    "price": 199.9,
+    "description": "Updated product description",
+    "image": "https://i.pravatar.cc",
+    "category": "electronics"
+  }
+}

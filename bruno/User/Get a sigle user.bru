@@ -1,0 +1,15 @@
+meta {
+  name: Get a sigle user
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://fakestoreapi.com/users/10
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
